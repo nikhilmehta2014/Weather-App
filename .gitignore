@@ -13,3 +13,6 @@
 /captures
 .externalNativeBuild
 .cxx
+
+#Custom
+app/src/main/java/com/nikhil/weatherapp/Notes.txt

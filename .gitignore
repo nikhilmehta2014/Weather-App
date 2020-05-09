@@ -16,3 +16,4 @@
 
 #Custom
 app/src/main/java/com/nikhil/weatherapp/Notes.txt
+/app/src/main/java/com/nikhil/weatherapp/framework/network/service/WeatherApi.kt

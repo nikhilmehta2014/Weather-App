@@ -1,10 +1,12 @@
 package com.nikhil.weatherapp.framework.persistence.model
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
-@Entity
-data class WeatherData(
+@Entity(tableName = "app_data")
+data class AppData(
+    @PrimaryKey(autoGenerate = true) val primaryId : Int = 0,
     @Json(name = "base") val base: String,
     @Json(name = "clouds") val clouds: Clouds,
     @Json(name = "cod") val cod: Int,

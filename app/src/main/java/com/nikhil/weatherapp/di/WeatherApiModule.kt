@@ -1,5 +1,8 @@
 package com.nikhil.weatherapp.di
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.nikhil.weatherapp.Constants
+import com.nikhil.weatherapp.framework.network.service.DefaultRequestInterceptor
 import com.nikhil.weatherapp.framework.network.service.WeatherApi
 import dagger.Module
 import dagger.Provides
@@ -30,7 +33,7 @@ class WeatherApiModule {
         rxJava2CallAdapterFactory: RxJava2CallAdapterFactory
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://example")
+            .baseUrl(Constants.NetworkService.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(moshiConverterFactory)
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
@@ -44,6 +47,8 @@ class WeatherApiModule {
             .readTimeout(40, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(DefaultRequestInterceptor())
+            .addInterceptor(StethoInterceptor())
             .build()
 
     @Provides

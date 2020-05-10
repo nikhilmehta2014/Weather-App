@@ -48,10 +48,16 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
 
     //Logging
     implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
     implementation "com.jakewharton.timber:timber:$timber_version"
+    //Stetho
+    implementation "com.facebook.stetho:stetho:$stetho_version"
+    implementation "com.facebook.stetho:stetho-okhttp3:$stetho_version"
+    implementation "com.facebook.stetho:stetho-urlconnection:$stetho_version"
 
     //Preference
     implementation "androidx.preference:preference-ktx:$preference_version"

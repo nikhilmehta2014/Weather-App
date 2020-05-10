@@ -1,5 +1,7 @@
 package com.nikhil.weatherapp.framework.persistence.model
 
+import androidx.annotation.NonNull
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
@@ -8,16 +10,21 @@ import com.squareup.moshi.Json
 data class AppData(
     @PrimaryKey(autoGenerate = true) val primaryId : Int = 0,
     @Json(name = "base") val base: String,
+    @Embedded @NonNull
     @Json(name = "clouds") val clouds: Clouds,
     @Json(name = "cod") val cod: Int,
+    @Embedded @NonNull
     @Json(name = "coord") val coord: Coord,
     @Json(name = "dt") val dt: Int,
     @Json(name = "id") val id: Int,
+    @Embedded @NonNull
     @Json(name = "main") val main: Main,
     @Json(name = "name") val name: String,
+    @Embedded @NonNull
     @Json(name = "sys") val sys: Sys,
     @Json(name = "timezone") val timezone: Int,
     @Json(name = "weather") val weather: List<Weather>,
+    @Embedded @NonNull
     @Json(name = "wind") val wind: Wind
 )
 
